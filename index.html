@@ -1,8 +1,39 @@
+<!-- 
+The A11Y Project är ett community-drivet initiativ som strävar efter att göra digital tillgänglighet enklare, 
+mer begriplig och lättare att implementera för alla.
+
+Läs lite om projektet:
+https://www.a11yproject.com/about/
+
+
+Tillgänglighet är en viktig del av webbutveckling. Det handlar om att göra webbplatser och appar tillgängliga för alla, inklusive personer med funktionsnedsättningar. 
+Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att använda semantisk HTML, skapa enkel navigering och använda alternativa texter för bilder.
+ ____________________________________________________________________________________________________
+ 1. Läs noga genom koden och identifiera alla tillgänglighetsproblem.
+ 
+ 2. Testa kör lighthouse i devtools(Google chrome) och se vilka problem som finns.
+
+ 3. Skriv en kort sammanfattning av vad som är fel och hur det kan åtgärdas.
+
+ 4. Skriv om koden så att den följer tillgänglighetsstandarder.
+
+ 5. Skriv en kort sammanfattning av vad du har ändrat och varför.
+
+ 6. Testa din nya kod med andra verktyg för tillgänglighet.
+
+ 7. Skriv en kort reflektion över hur det var att göra uppgiften. Vad var svårt? Vad lärde du dig?
+ ____________________________________________________________________________________________________
+
+-->
+
+
 <!DOCTYPE html>
+<!-- Vad händer när man kommenterar bort språket? -->
 <!-- <html lang="en"> -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- Endast en `<title>` används; flera kan orsaka oväntat beteende och påverka SEO samt tillgänglighet negativt. -->
     <title>Vase Vista - Artisanal Vases</title>
     <title>Vase Vista - Artisanal Vases</title>
     <meta name="description" content="Elevating spaces through thoughtfully designed vessels that blend form and function in perfect harmony." />
@@ -16,11 +47,12 @@
       <div class="container">
         <nav class="navbar">
           <a href="#home" class="logo">Vase Vista</a>
+          <!-- Navigation menu with duplicate IDs, inconsistent tabindex, and broken links to a 404 page -->
           <ul class="nav-links">
             <li><a id="1" href="#home">Home</a></li>
             <li><a id="1" tabindex="-1" href="#collection">Collection</a></li>
             <li><a href="#philosophy">Philosophy</a></li>
-            <li><a tabindex="-1" href="#contact">Contact</a></li>
+            <li><a tabindex="-1" href="404.html">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -32,7 +64,9 @@
         <div class="container">
           <div class="hero-content">
             <span class="subtitle">Artisanal Excellence</span>
+            <!-- Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
             <h1>Timeless Beauty <br>in Every Curve</h1>
+            <h1></h1>
             <p>Each piece tells a story of craftsmanship and elegance, designed to elevate your space and inspire your senses.</p>
             <div class="hero-buttons">
               <a href="#collection" class="btn btn-primary">Explore Collection</a>
@@ -53,33 +87,37 @@
             <h2>Curated Excellence</h2>
           </div>
 
+      <!-- Use a <button> instead of a <div> to improve accessibility -->
           <div class="category-filters">
-            <button class="filter-btn active">All</button>
+            <div class="filter-btn active">All</div>
             <button class="filter-btn">Ceramic</button>
-            <button class="filter-btn">Glass</button>
+            <div class="filter-btn">Glass</div>
             <button class="filter-btn">Porcelain</button>
           </div>
 
+          <!-- Broken urls on some pictures, what can we do to change this? -->
           <div class="product-grid">
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1602816130091-c3c6b8b28060?q=80&w=1888&auto=format&fit=crop" alt="Terra Sculptural Vase">
+                <img src="https://images.unsplash.com/photo-1602816130091-c3c6b8b28060?q=80&w=1888&auto=format&fit=crop">
               </div>
               <div class="product-info">
                 <span class="product-category">Ceramic</span>
-                <h3>Terra Sculptural Vase</h3>
+                <h1>Terra Sculptural Vase</h3>
                 <p>Hand-thrown ceramic with a matte terracotta finish</p>
                 <span class="product-price">$120</span>
               </div>
             </div>
 
+            <!-- Mismatched closing tag: Change </h3> to </h1> for correct HTML structure. 
+            Ensure heading levels are used logically for better accessibility and screen reader navigation. -->
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?q=80&w=1964&auto=format&fit=crop" alt="Serenity Glass Vessel">
+                <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?q=80&w=1964&auto=format&fit=crop">
               </div>
               <div class="product-info">
                 <span class="product-category">Glass</span>
-                <h3>Serenity Glass Vessel</h3>
+                <h1>Serenity Glass Vessel</h3>
                 <p>Mouth-blown glass with a gentle gradient effect</p>
                 <span class="product-price">$95</span>
               </div>
@@ -87,7 +125,7 @@
 
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1578500351865-ea7deed19bd0?q=80&w=1887&auto=format&fit=crop" alt="Nordic Minimalist Vase">
+                <img src="https://images.unsplash.com/photo-1578500351865-ea7deed19bd0?q=80&w=1887&auto=format&fit=crop">
               </div>
               <div class="product-info">
                 <span class="product-category">Porcelain</span>
@@ -99,7 +137,7 @@
 
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?q=80&w=1974&auto=format&fit=crop" alt="Organic Contour Vessel">
+                <img src="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?q=80&w=1974&auto=format&fit=crop">
               </div>
               <div class="product-info">
                 <span class="product-category">Ceramic</span>
@@ -117,15 +155,17 @@
         <div class="container">
           <div class="philosophy-content">
             <div class="philosophy-image">
-              <img src="https://images.unsplash.com/photo-1576020799627-aeac74d58064?q=80&w=1964&auto=format&fit=crop" alt="Artisan crafting a vase">
+              <img src="https://images.unsplash.com/photo-1576020799627-aeac74d58064?q=80&w=1964&auto=format&fit=crop">
               <div class="quote-box">
-                <p>"Simplicity is the ultimate sophistication."</p>
+                <!-- a-tag, should be p-tag -->
+                <a>"Simplicity is the ultimate sophistication."</a>
               </div>
             </div>
             <div class="philosophy-text">
               <span class="subtitle">Our Approach</span>
               <h2>The Philosophy Behind Our Design</h2>
               
+              <!-- Instead of using multiple <br> tags to separate paragraphs, use <p> or proper headings for better readability. -->
               <div class="philosophy-paragraphs">
                 <p>We believe in the beauty of form that follows function, creating pieces that are not just vessels but expressions of artistry that enhance your surroundings.</p>
                 <p>Each vase is thoughtfully designed with attention to proportion, texture, and material integrity—celebrating the perfect balance between modern aesthetics and timeless craftsmanship.</p>
@@ -166,6 +206,7 @@
               </div>
             </form>
             
+            <!-- Instead of using multiple <br> tags to separate paragraphs, use <p> or proper headings for better readability. -->
             <div class="contact-info">
               <div class="info-card">
                 <h3>Visit Our Studio</h3>
@@ -206,12 +247,13 @@
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
-            
+         
+            <!-- 404 pages and # links provide no destination -->
             <div class="footer-column">
               <h4>Connect</h4>
               <ul>
                 <li><a href="#">Instagram</a></li>
-                <li><a href="#">Pinterest</a></li>
+                <li><a href="404.html">Pinterest</a></li>
                 <li><a href="#">LinkedIn</a></li>
               </ul>
             </div>
@@ -222,8 +264,8 @@
           <p>&copy; 2023 Vase Vista. All rights reserved.</p>
           
           <div class="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms of Service</a>
           </div>
         </div>
       </div>
