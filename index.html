@@ -28,12 +28,12 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
 
 
 <!DOCTYPE html>
-<!-- Vad händer när man kommenterar bort språket? -->
+<!-- What happens when the language attribute is commented out? -->
 <!-- <html lang="en"> -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- Endast en `<title>` används; flera kan orsaka oväntat beteende och påverka SEO samt tillgänglighet negativt. -->
+    <!-- Only one `<title>` should be used; multiple titles can cause unexpected behavior and negatively impact SEO and accessibility. -->
     <title>Vase Vista - Artisanal Vases</title>
     <title>Vase Vista - Artisanal Vases</title>
     <meta name="description" content="Elevating spaces through thoughtfully designed vessels that blend form and function in perfect harmony." />
@@ -64,7 +64,8 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
         <div class="container">
           <div class="hero-content">
             <span class="subtitle">Artisanal Excellence</span>
-            <!-- Två <h1>-taggar i .container kan påverka tillgänglighet och SEO. -->
+            <!-- Two <h1> tags inside .container may affect accessibility and SEO. -->
+
             <h1>Timeless Beauty <br>in Every Curve</h1>
             <h1></h1>
             <p>Each piece tells a story of craftsmanship and elegance, designed to elevate your space and inspire your senses.</p>
@@ -96,6 +97,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
           </div>
 
           <!-- Broken urls on some pictures, what can we do to change this? -->
+           <!-- Missing alt text and hotlinking an external image can affect accessibility, performance, and reliability. -->
           <div class="product-grid">
             <div class="product-card">
               <div class="product-image">
@@ -236,25 +238,26 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
             <h3>Vase Vista</h3>
             <p>Elevating spaces through thoughtfully designed vessels that blend form and function in perfect harmony.</p>
           </div>
-          
+
+          <!-- Incorrect use of <p> for links: Replace <p> with <a> to ensure proper semantics and accessibility. -->
           <div class="footer-links">
             <div class="footer-column">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#collection">Collection</a></li>
-                <li><a href="#philosophy">Philosophy</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><p href="#home">Home</p></li>
+                <li><p href="#collection">Collection</p></li>
+                <li><p href="#philosophy">Philosophy</p></li>
+                <li><p href="#contact">Contact</p></li>
               </ul>
             </div>
          
-            <!-- 404 pages and # links provide no destination -->
+            <!-- 404 pages and # links provide no destination  -->
             <div class="footer-column">
               <h4>Connect</h4>
               <ul>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="404.html">Pinterest</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><p href="#">Instagram</p></li>
+                <li><p href="404.html">Pinterest</p></li>
+                <li><p href="#">LinkedIn</p></li>
               </ul>
             </div>
           </div>
